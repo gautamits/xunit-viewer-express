@@ -19,4 +19,5 @@ WORKDIR /app
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/views ./views
 COPY --from=builder /app/index.js ./index.js
+COPY --from=builder /app/config.js ./config.js
 CMD ["node","index.js"]
