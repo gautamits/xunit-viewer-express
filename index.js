@@ -3,15 +3,17 @@ const app= express();
 const fileUpload = require('express-fileupload');
 const PORT = Number(process.env.PORT) || 3000;
 const xunitViewer = require('xunit-viewer')
+const config = require('./config.js');
 
 app.use(express.json());
 app.set('view engine', 'pug');
+const indexRouter = express.Router();
 app.use(fileUpload());
-app.get('/', (req, res) => {
+indexRouter.get('/', (req, res) => {
     res.render('index')
 });
 
-app.post('/', async (req, res)=>{
+indexRouter.post('/', async (req, res)=>{
     const result = await xunitViewer({
         server: false,
         title: 'Xunit View Sample Tests',
@@ -29,4 +31,7 @@ if (require.main === module) { // true if file is executed
         }
     });
 }
+
+app.use(config.baseUrl, indexRouter);
+
 exports.default=app
