@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
     res.render('index')
 });
 
-app.post('/view', async (req, res)=>{
+app.post('/', async (req, res)=>{
     const result = await xunitViewer({
         server: false,
         title: 'Xunit View Sample Tests',
