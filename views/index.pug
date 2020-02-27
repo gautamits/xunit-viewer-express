@@ -1,0 +1,72 @@
+html
+    header
+        link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.0/codemirror.css" id="main-styles-link" )
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.0/codemirror.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.0/mode/xml/xml.min.js')
+        script.
+            window.onload=function(){
+                CodeMirror.fromTextArea(document.getElementById("editor"), {
+                    lineNumbers: true,
+                    mode: "xml"
+                });
+            }
+        title= "attach junit xml"
+        style(type='text/css').
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: green;
+            }
+
+            .CodeMirror{
+                border-radius: 8px;
+                border: 1px solid green;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 800px;
+                padding: 20px;
+                border-radius: 8px;
+                height: 600px;
+                box-shadow: 4px 4px 9px 2px #0da24a;
+            }
+
+            form > * {
+                margin-bottom: 16px;
+            }
+            h3{
+                color: green;
+            }
+            textarea{
+                width: 100%;
+                height: 400px;
+                border: 1px solid green;
+                border-radius: 8px;
+                resize: none;
+                padding: 20px;
+            }
+
+            textarea:focus{
+                outline: none;
+            }
+
+            input[type="submit"]{
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid green;
+                border-radius: 8px;
+                color: green;
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+    body
+        form(action="/view" method="post", enctype="multipart/form-data")
+            input(type="file" name="xml")
+            h3 OR
+            textarea(name="xmlcontent", id="editor")
+            input(type="submit")

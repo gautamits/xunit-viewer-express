@@ -1,0 +1,21 @@
+{
+  "name": "express-xunit-viewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.2",
+    "pug": "^2.0.4",
+    "xunit-viewer": "github:gautamits/xunit-viewer#master"
+  }
+}
