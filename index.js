@@ -13,7 +13,7 @@ indexRouter.get('/', (req, res) => {
     res.render('index')
 });
 
-indexRouter.post('/', async (req, res)=>{
+indexRouter.post('/view', async (req, res)=>{
     const result = await xunitViewer({
         server: false,
         title: 'Xunit View Sample Tests',
