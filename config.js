@@ -1,4 +1,4 @@
 //config.js
 module.exports = {
-    baseUrl: '/xunit',
+    baseUrl: '',
 }
